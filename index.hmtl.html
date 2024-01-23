@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Saitemre.css">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1  class="baslık"
+    onmouseover="white(this)" onmouseout="normal(this)"
+    >Sait Emre Dayanç</h1>
+    <h2 class="portfolyo"><a href="portfolyo.index.html" style="color: rgb(107, 148, 137);">Portfolyom</a></h2>
+
+    
+  <div class="yazılar">
+    <h2>
+        Okuduğum Okullar:
+    </h2>
+
+    <table style="width:90%">
+      <tr class="okulbaslık">
+        <th>─ Gazi Umur Bey Ortaokulu</th>
+        <th>─ Özel Uğur Okulları Anadolu Lisesi</th>
+        <th>─ Mimar Sinan Güzel Sanatlar Üniversitesi</th>
+      </tr>
+      <tr>
+        <th><img  onmouseover="bigImg(this)" onmouseout="normalImg(this)"   style="scale: 60%;" src="img/gubo1.png" alt=""></th>
+        <th><img  onmouseover="bigImg(this)" onmouseout="normalImg(this)"   style="scale: 60%;" src="img/ugur1.png" alt=""></th>
+        <th><img  onmouseover="bigImg(this)" onmouseout="normalImg(this)"   style="scale: 60%;" src="img/msgsueski1.png" alt=""></th>
+      </tr>
+     </table>
+
+   
+        
+  </div>
+
+
+  
+
+
+  <div class="yazı">
+    <h2>
+        Katıldığım Yarışmalar: 
+    </h2>
+
+    <div class="yarısma">
+    <table style="width:90%">
+      <tr style="font-size: large;">
+        <th>─Matematik Yarışması</th>
+        <th>─Sınıflararası Langırt Turnuvası (2019)</th>
+      </tr>
+      <tr>
+        <th>└ Okul İkinciliği</th>
+        <th>└ 2.lik Ödülü</th>
+      </tr>
+      </table>
+    </div>
+    
+  </div>
+
+  <div style="text-align: center;">
+    <h2> Hobilerim Ve Gittiğim Kurslar</h2>
+    <table class="tablo"  style="color: blue;">
+      <tr>
+        <th class="spor"> Spor Kursları</th>
+        
+        <th class="hobi">Güreş</th> <th class="hobi">Basketbol</th> 
+        <th class="hobi">Futbol</th> <th class="hobi">Yüzme</th>
+        <th class="hobi">Kickbox</th> <th class="hobi">Tenis</th> 
+     
+      </tr>
+    </table>
+    
+    <table class="tablo"  style="color: brown;">
+      <tr>
+        <th class="spor"> Enstrümanlar</th>
+        <th class="hobi">Gitar</th> <th class="hobi">Elektro Gitar</th>
+        <th class="hobi">Flüt</th> <th class="hobi">Melodika</th>
+      </tr>
+    </table>
+</div>
+
+<h1 class="kedim">Kedim</h1>
+
+<div class="slider">
+  <div class="slides">
+      <img class="slide" src="img/mila.jpg" alt="Image #1">
+      <img class="slide" src="img/mila2.jpg" alt="Image #2">
+      <img class="slide" src="img/mila3.jpg" alt="Image #3">
+  </div>
+  <button class="prev" onclick="prevSlide()">&#10094</button>
+  <button class="next" onclick="nextSlide()">&#10095</button>
+</div>
+
+
+
+
+
+<div class="fixed">
+ <h3>İletişim: s.emredayanc@gmail.com</h3>
+ <h3>İnstagram: realsaitemre </h3>
+</div>
+
+
+
+
+
+
+
+
+
+
+<script>
+
+
+  function bigImg(x) {
+    x.style.scale = "70%";
+  }
+  
+  function normalImg(x) {
+    x.style.scale = "60%";
+  }
+
+
+  const slides = document.querySelectorAll(".slides img");
+let slideIndex = 0;
+let intervalId = null;
+
+document.addEventListener("DOMContentLoaded", initializeSlider);
+
+function initializeSlider(){
+    if(slides.length > 0){
+        slides[slideIndex].classList.add("displaySlide");
+        intervalId = setInterval(nextSlide, 5000);
+    }
+}
+
+function showSlide(index){
+    if(index >= slides.length){
+        slideIndex = 0;
+    }
+    else if(index < 0){
+        slideIndex = slides.length - 1;
+    }
+
+    slides.forEach(slide => {
+        slide.classList.remove("displaySlide");
+    });
+    slides[slideIndex].classList.add("displaySlide");
+}
+
+function prevSlide(){
+    clearInterval(intervalId);
+    slideIndex--;
+    showSlide(slideIndex);
+}
+
+function nextSlide(){
+    slideIndex++;
+    showSlide(slideIndex);
+}
+
+
+function white(x) {
+  x.style.color = "white"
+}
+
+function normal(x) {
+  x.style.color = "black"
+}
+ 
+  </script>
+    
+
+
+
+</body>
+</html>
